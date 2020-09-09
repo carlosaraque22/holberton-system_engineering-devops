@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lan ls -lan /home/vagrant ls -lan /boot
