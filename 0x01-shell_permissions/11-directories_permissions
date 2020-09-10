@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -RX 111
+chmod a+X *
