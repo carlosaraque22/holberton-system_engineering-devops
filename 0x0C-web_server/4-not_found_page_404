@@ -6,4 +6,7 @@ sudo ufw allow 'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 newstring="rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4/ permanent;"
 sudo sed -i "/server_name _/a $newstring" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page\n" > /var/www/html/error_404.html
+error="error_page 404 /error_404.html; \nlocation = /error_404.html { \nroot /var/www/html; \ninternal;\n}"
+sudo sed -i "/server_name _/a $error" /etc/nginx/sites-available/default
 sudo service nginx restart
